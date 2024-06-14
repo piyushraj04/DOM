@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CART Page</title>
+</head>
+<body>
+    <h1>Cart Page</h1>
+    <a href="index.html">HOME</a>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let cartData = JSON.parse(localStorage.getItem("Cart-data")) || [];
+
+var container = document.getElementById("container");
+
+console.log(cartData);
+
+displayData(cartData);
+
+function displayData(arr) {                                    // wrap in a function for use
+
+    container.innerHTML = "";
+
+    arr.forEach((ele, i) => {
+        let card = document.createElement("div");
+
+        let name = document.createElement("h3");
+        name.innerText = ele.name;
+
+        let email = document.createElement("h4");
+        email.innerText = ele.email;
+
+        let btn = document.createElement("button");
+        btn.textContent = "Remove from Cart"
+        btn.addEventListener("click", function () {
+            removeFromCart(ele, i);
+        });
+
+
+        card.append(name, email, btn);
+        container.append(card);
+    });
+}
+
+
+function removeFromCart(ele, i) {
+    cartData.splice(i, 1);
+    displayData(cartData);
+    localStorage.setItem("Cart-data", JSON.stringify(cartData));
+}
+
+</script>
