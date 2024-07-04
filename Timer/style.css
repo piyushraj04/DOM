@@ -1,0 +1,22 @@
+#watch{
+    border: 1px solid red;
+    border-radius: 20px;
+    display: inline-block;
+    background-color: #24e4e1;
+    padding: 20px;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+}
+
+#btns>button{
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid green;
+    background-color: #e7a2a2;
+}
+
+#btns>button:hover{
+    cursor: pointer;
+    background-color: yellow;
+}
