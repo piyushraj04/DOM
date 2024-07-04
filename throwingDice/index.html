@@ -44,19 +44,19 @@
     let roller = document.getElementById("roller");
     let d1num = () => {
         let num = Math.floor(Math.random() * 6) + 1;
-        console.log(num);
+        // console.log(num);
         d1.textContent = num;
         d1.style.alignContent = "center";
     }
     let d2num = () => {
         let num = Math.floor(Math.random() * 6) + 1;
-        console.log(num);
+        // console.log(num);
         d2.textContent = num;
         d2.style.alignContent = "center";
     }
     let d3num = () => {
         let num = Math.floor(Math.random() * 6) + 1;
-        console.log(num);
+        // console.log(num);
         d3.textContent = num;
         d3.style.alignContent = "center";
     }
@@ -65,7 +65,56 @@
         d1num();
         d2num();
         d3num();
-    })
+        if (d1.textContent > d2.textContent && d1.textContent > d3.textContent) {
+            d1.style.backgroundColor = "green";
+            if (d2.textContent > d3.textContent) {
+                d2.style.backgroundColor = "yellow";
+                d3.style.backgroundColor = "red"
+            }
+            else {
+                d2.style.backgroundColor = "red";
+                d3.style.backgroundColor = "yellow"
+            }
+        }
+        else if (d2.textContent > d1.textContent && d2.textContent > d3.textContent) {
+            d2.style.backgroundColor = "green";
+            if (d1.textContent > d3.textContent) {
+                d1.style.backgroundColor = "yellow";
+                d3.style.backgroundColor = "red"
+            }
+            else {
+                d1.style.backgroundColor = "red";
+                d3.style.backgroundColor = "yellow"
+            }
+        }
+        else {
+            d3.style.backgroundColor = "green"
+            if (d2.textContent > d1.textContent) {
+                d2.style.backgroundColor = "yellow";
+                d1.style.backgroundColor = "red"
+            }
+            else if (d3.textContent == d2.textContent) {
+                d3.style.backgroundColor = "blue";
+                d2.style.backgroundColor = "blue";
+            }
+            else if (d3.textContent == d1.textContent) {
+                d3.style.backgroundColor = "blue";
+                d1.style.backgroundColor = "blue";
+            }
+            else if (d2.textContent == d1.textContent) {
+                d2.style.backgroundColor = "blue";
+                d1.style.backgroundColor = "blue";
+            }
+            else {
+                d2.style.backgroundColor = "red";
+                d1.style.backgroundColor = "yellow"
+            }
+        }
+    }
+    )
+
+
+
 
     // color acg to num <--remaining
 </script>
