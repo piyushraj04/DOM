@@ -1,0 +1,11 @@
+#container{
+    border: 2px solid red;
+}
+#container>div{
+    /* border: 1px solid; */
+    background-color: #f6eb24;
+}
+#container>div>image{
+    border: 2px solid teal;
+    border-radius: 20px;
+}

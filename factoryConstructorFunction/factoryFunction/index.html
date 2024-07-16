@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object creation using Factory function</h1>
+</body>
+</html>
+<script>
+    //Problem 1: factory function iPhone1
+    function iPhone1(ASIN,color,display,camera){
+        let obj = {};
+
+        obj.ASIN=ASIN;
+        obj.color=color;
+        obj.display=display;
+        obj.camera=camera;
+
+        obj.dial=function(){
+            console.log("tring.. tring...");
+        }
+
+        obj.sendMessage=function(){
+            console.log("Sending message...");
+        }
+
+        obj.cameraClick=function(){
+            console.log( "Camera clicked");
+        }
+        return obj;
+    }
+
+    //Problem 2: factory function iPhone2
+
+    function iPhone2(ASIN,color,display,camera,bluetooth){
+
+        let obj2={};
+
+        obj2.ASIN=ASIN;
+        obj2.color=color;
+        obj2.display=display;
+        obj2.camera=camera;
+        obj2.bluetooth=bluetooth;
+
+        obj2.dial=function(){
+            console.log("tring.. tring...");
+        }
+
+        obj2.sendMessage=function(){
+            console.log("Sending message...");
+        }
+
+        obj2.cameraClick=function(){
+            console.log( "Camera clicked");
+        }
+
+        obj2.connectBluetooth=function(){
+            console.log("Bluetooth connected successfully...");
+        }
+
+        return obj2;
+    }
+
+    let x = iPhone1("ASIN","White","Amoled","Night_Camera");
+    console.log(x)
+    x.dial();
+    x.sendMessage();
+    x.cameraClick();
+
+    let y = iPhone2("ASIN2","Black","Super Amoled","Night_Angled_Camera",true);
+    console.log(y);
+    y.dial();
+    y.sendMessage();
+    y.cameraClick();
+    y.connectBluetooth();
+</script>
